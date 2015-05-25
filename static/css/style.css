@@ -73,7 +73,7 @@ aside nav ul li a {
 	border-radius: 15px;
 	color: #eee;
 	background: #137FA6;
-	box-shadow: 0 0 0 2px #137fa6;
+	box-shadow: 0 0 0 0px #137fa6;
 
 	transition: all 150ms;
 }
@@ -239,7 +239,7 @@ main footer a.button_accent {
 	border-radius: 15px;
 	color: #fff;
 	background-color: #51b2f2;
-	box-shadow: 0 0 0 2px #51b2f2;
+	box-shadow: 0 0 0 0px #51b2f2;
 	font-size: 18px;
 
 	transition: all 150ms;
