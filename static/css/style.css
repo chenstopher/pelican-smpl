@@ -17,6 +17,7 @@ hr {
 	border: none;
 }
 aside {
+	min-width: 320px;
 	background-color: #222222;
 	text-align: center;
 }
@@ -41,6 +42,8 @@ aside section.logo img {
 	border: 3px solid white;
 	transform: scale(1);
 	transition: transform 200ms;
+	width: 128px;
+	height: 128px;
 }
 aside section.logo img:hover {
 	transform: scale(1.05);
@@ -67,31 +70,39 @@ aside nav ul li {
 }
 aside nav ul li a {
 	padding: 6px 13px;
-	background: #127193;
 	border-radius: 15px;
-	box-shadow: 0 0 0 0px #137fa6;
 	color: #eee;
+	background: #137FA6;
+	box-shadow: 0 0 0 2px #137fa6;
 
 	transition: all 150ms;
 }
 aside nav ul li a:hover {
-	background: #137FA6;
-	box-shadow: 0 0 0 2px #137fa6;
+	background: #127193;
+	box-shadow: 0 0 0 2px #127193;
 
 	transition: all 200ms;
 }
-main header {
-	padding: 40px 40px 0 40px;
+main {
+	min-width: 320px;
+}
+main > header {
+	margin: 0 auto;
+	max-width: 640px;
+	padding: 30px 40px 0 40px;
+}
+main > header p {
+	color: #999;
+	font-size: 14px;
+	margin: 0;
 }
 main header h1 {
 	margin-top: 15px;
 	margin-bottom: 5px;
 }
-main header p {
+main article.post header p {
 	margin: 0;
-	font-weight: bold;
 	font-size: 12px;
-	text-transform: uppercase;
 	color: #bebebe;
 }
 main article {
@@ -108,9 +119,36 @@ main article header h1 {
 	margin-top: 15px;
 	margin-bottom: 5px;
 }
+main article header h1 a{
+	color: #000;
+}
+main article header h1 a:hover{
+	color: #666;
+}
 
 main article div.article_text {
 	line-height: 1.375em;
+}
+main article div.article_text img{
+	width: 100%;
+	height: auto;
+}
+main article div.article_text div.gallery ul{
+	margin: 0;
+	padding: 0;
+}
+main article div.article_text div.gallery li{
+	display: inline-block;
+	display: inline-block;
+	width: calc(33% - 4px);
+	height: auto;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+main article div.article_text div.gallery img{
+	width: 100%;
+	height: auto;
 }
 main article div.article_text a {
 	color: #009AA6;
@@ -141,6 +179,38 @@ main article div.article_text blockquote {
 	color: #999999;
 	font-style: italic;
 }
+main article div.article_text a.read_more {
+	vertical-align: middle;
+	padding: 5px 7px;
+	color: #fff;
+	font-size: 12px;
+	border-radius: 12px;
+	background-color: #70AABB;
+	text-decoration: none;
+	box-shadow: 0 0 0 0px #70AABB;
+
+	transition: all 150ms;
+}
+main article div.article_text a.read_more:hover {
+	background-color: #4B8596;
+	box-shadow: 0 0 0 2px #4B8596;
+	transition: all 200ms;
+}
+
+main article div.videobox {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 58.6%;
+}
+main article div.videobox iframe,
+main article div.videobox object,
+main article div.videobox embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 main article div.gist {
 	line-height: .875em;
 }
@@ -154,29 +224,30 @@ main article div.article_meta p{
 }
 main article div.article_meta a{
 	color: #b0b0b0;
-	text-transform: uppercase;
 }
 main article div.article_meta a:hover{
 	color: #127193;
 }
 main footer {
+	max-width: 640px;
 	border-top: #eeeeee 1px solid;
 	padding: 40px;
+	margin: 0 auto;
 }
 main footer a.button_accent {
 	padding: 6px 13px;
 	border-radius: 15px;
-	box-shadow: 0 0 0 0px #0e94ec;
-	background: #0e94ec;
 	color: #fff;
+	background-color: #51b2f2;
+	box-shadow: 0 0 0 2px #51b2f2;
 	font-size: 18px;
 
 	transition: all 150ms;
 }
 main footer a.button_accent:hover {
 	color: #ffffff;
-	background-color: #51b2f2;
-	box-shadow: 0 0 0 2px #51b2f2;
+	background: #0e94ec;
+	box-shadow: 0 0 0 2px #0e94ec;
 
 	transition: all 150ms;
 }
@@ -186,7 +257,6 @@ main div#ending_message {
 	font-size: 10px;
 }
 div#paginator {
-	max-width: 640px;
 	text-align: center;
 }
 @media screen and (min-width: 1024px) {
@@ -194,6 +264,7 @@ div#paginator {
 		background: linear-gradient(to right, #eeeeee, #ffffff);
 	}
 	aside {
+		min-width: initial;
 		width: 25%;
 		height: 100%;
 		position: fixed;
@@ -224,6 +295,12 @@ div#paginator {
 		overflow-y: hidden;
 	}
 	main article {
+		margin: 0 0;
+	}
+	main header {
+		margin: 0 0;
+	}
+	main footer {
 		margin: 0 0;
 	}
 }
