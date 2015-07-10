@@ -264,7 +264,7 @@ div#paginator {
 		background: linear-gradient(to right, #eeeeee, #ffffff);
 	}
 	aside {
-		min-width: initial;
+		min-width: auto;
 		width: 25%;
 		height: 100%;
 		position: fixed;
